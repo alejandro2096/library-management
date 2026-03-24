@@ -91,7 +91,7 @@ export function BookForm({ book }: BookFormProps) {
     <form onSubmit={handleSubmit} className="space-y-6">
       <Card>
         <CardHeader>
-          <div className="flex items-center justify-between">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
             <CardTitle>Book Information</CardTitle>
             <Button
               type="button"
@@ -213,7 +213,7 @@ export function BookForm({ book }: BookFormProps) {
         </CardContent>
       </Card>
 
-      <div className="flex gap-3 justify-end">
+      <div className="flex flex-col-reverse gap-2 sm:flex-row sm:justify-end">
         <Button type="button" variant="outline" onClick={() => router.back()}>
           Cancel
         </Button>
