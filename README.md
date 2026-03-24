@@ -4,7 +4,7 @@ A full-featured library management system with integrated AI capabilities. Built
 
 ## Live Demo
 
-> Deploy your own instance following the setup guide below.
+**[https://library-management-six-plum.vercel.app](https://library-management-six-plum.vercel.app)**
 
 ---
 
