@@ -21,7 +21,7 @@ export async function POST(req: Request) {
     })
     .join("\n");
 
-  const systemWithCatalog = `${SYSTEM_PROMPTS.librarian}\n\nCATÁLOGO ACTUAL:\n${catalogContext}`;
+  const systemWithCatalog = `${SYSTEM_PROMPTS.librarian}\n\nCURRENT CATALOG:\n${catalogContext}`;
 
   const result = await streamText({
     model: google("gemini-2.5-flash"),
