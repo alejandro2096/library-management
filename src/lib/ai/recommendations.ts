@@ -40,11 +40,17 @@ export async function getMoodRecommendations(
 
   const text = await generateAI(
     `Estado emocional del usuario: ${MOOD_DESCRIPTIONS[mood]}\n\nCatálogo disponible:\n${catalogSummary}\n\nRecomienda los 3 libros más adecuados del catálogo para este momento emocional.`,
-    SYSTEM_PROMPTS.recommendations
+    SYSTEM_PROMPTS.recommendations,
+    2048
   );
 
-  const jsonMatch = text.match(/\{[\s\S]*\}/);
-  if (!jsonMatch) throw new Error("No JSON found in response");
+  // Strip markdown code fences if present
+  const stripped = text.replace(/```(?:json)?\s*/g, "").replace(/```\s*/g, "").trim();
+  const jsonMatch = stripped.match(/\{[\s\S]*\}/);
+  if (!jsonMatch) {
+    console.error("[RECOMMENDATIONS] No JSON in response:", text.slice(0, 200));
+    throw new Error("No JSON found in response");
+  }
 
   return JSON.parse(jsonMatch[0]) as RecommendationResult;
 }

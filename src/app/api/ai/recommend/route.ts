@@ -38,7 +38,7 @@ export async function POST(req: NextRequest) {
     if (error instanceof z.ZodError) {
       return NextResponse.json({ error: error.issues }, { status: 400 });
     }
-    console.error("[AI RECOMMEND]", error);
+    console.error("[AI RECOMMEND]", error instanceof Error ? error.message : error);
     return NextResponse.json({ error: "Recommendation failed" }, { status: 500 });
   }
 }
