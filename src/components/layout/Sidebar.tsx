@@ -51,7 +51,7 @@ export function Sidebar({ role }: SidebarProps) {
   return (
     <aside className="flex h-screen w-64 flex-col border-r border-gray-200 bg-white">
       {/* Logo */}
-      <div className="flex h-16 items-center gap-2 border-b border-gray-200 px-6">
+      <div className="flex h-16 items-center justify-center gap-2 border-b border-gray-200 px-6">
         <BookOpen className="h-6 w-6 text-blue-600" />
         <span className="text-lg font-semibold text-gray-900">LibraryOS</span>
       </div>
