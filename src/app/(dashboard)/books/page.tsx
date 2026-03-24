@@ -19,7 +19,7 @@ export default function BooksPage() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Book catalog</h1>
           <p className="text-gray-500 mt-1">
@@ -65,7 +65,7 @@ export default function BooksPage() {
           <p className="text-sm text-gray-400 mt-1">Try different search terms</p>
         </div>
       ) : (
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
           {displayBooks.map((book: Book & { loans?: { id: string }[] }) => (
             <BookCard key={book.id} book={book} />
           ))}

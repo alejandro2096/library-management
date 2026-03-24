@@ -18,7 +18,7 @@ export function AILibrarian() {
   }, [messages]);
 
   return (
-    <div className="flex h-[calc(100vh-10rem)] flex-col">
+    <div className="flex h-[60vh] flex-col md:h-[calc(100vh-10rem)]">
       {/* Messages */}
       <div className="flex-1 overflow-y-auto space-y-4 p-4">
         {messages.length === 0 && (

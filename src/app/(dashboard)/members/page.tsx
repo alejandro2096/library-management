@@ -30,14 +30,15 @@ export default async function MembersPage() {
           </CardTitle>
         </CardHeader>
         <CardContent>
+          <div className="overflow-x-auto">
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-gray-100 text-left text-xs font-medium text-gray-500 uppercase">
                 <th className="pb-3">Name</th>
-                <th className="pb-3">Email</th>
+                <th className="hidden sm:table-cell pb-3">Email</th>
                 <th className="pb-3">Active loans</th>
                 <th className="pb-3">Role</th>
-                <th className="pb-3">Member since</th>
+                <th className="hidden sm:table-cell pb-3">Member since</th>
               </tr>
             </thead>
             <tbody>
@@ -49,7 +50,7 @@ export default async function MembersPage() {
                 return (
                   <tr key={m.id} className="border-b border-gray-50">
                     <td className="py-3 font-medium text-gray-900">{m.name}</td>
-                    <td className="py-3 text-gray-500">{m.email}</td>
+                    <td className="hidden sm:table-cell py-3 text-gray-500">{m.email}</td>
                     <td className="py-3">
                       {activeLoans > 0 ? (
                         <Badge variant={activeLoans > 3 ? "warning" : "secondary"}>
@@ -66,7 +67,7 @@ export default async function MembersPage() {
                         disabled={m.id === member.id}
                       />
                     </td>
-                    <td className="py-3 text-gray-500 text-xs">
+                    <td className="hidden sm:table-cell py-3 text-gray-500 text-xs">
                       {new Date(m.createdAt).toLocaleDateString("en")}
                     </td>
                   </tr>
@@ -74,7 +75,8 @@ export default async function MembersPage() {
               })}
             </tbody>
           </table>
-        </CardContent>
+          </div>
+          </CardContent>
       </Card>
     </div>
   );

@@ -60,14 +60,14 @@ export default function LoansPage() {
           <p className="text-gray-500">No loans in this category</p>
         </div>
       ) : (
-        <div className="rounded-xl border border-gray-200 bg-white overflow-hidden">
+        <div className="overflow-x-auto rounded-xl border border-gray-200 bg-white overflow-hidden">
           <table className="w-full">
             <thead>
               <tr className="border-b border-gray-100 bg-gray-50 text-left text-xs font-medium text-gray-500 uppercase tracking-wide">
                 <th className="px-4 py-3">Book</th>
-                <th className="px-4 py-3">Member</th>
+                <th className="hidden sm:table-cell px-4 py-3">Member</th>
                 <th className="px-4 py-3">Checked out</th>
-                <th className="px-4 py-3">Due date</th>
+                <th className="hidden sm:table-cell px-4 py-3">Due date</th>
                 <th className="px-4 py-3">Status</th>
                 <th className="px-4 py-3">Action</th>
               </tr>

@@ -41,11 +41,11 @@ export function LoanRow({ loan, canReturn = false }: LoanRowProps) {
           </div>
         </div>
       </td>
-      <td className="px-4 py-3 text-sm text-gray-600">{loan.member.name}</td>
+      <td className="hidden sm:table-cell px-4 py-3 text-sm text-gray-600">{loan.member.name}</td>
       <td className="px-4 py-3 text-sm text-gray-600">
         {formatDate(loan.checkedOut)}
       </td>
-      <td className="px-4 py-3">
+      <td className="hidden sm:table-cell px-4 py-3">
         <div className="flex items-center gap-1">
           {overdue && <AlertTriangle className="h-3.5 w-3.5 text-red-500" />}
           <span className={`text-sm ${overdue ? "text-red-600 font-medium" : "text-gray-600"}`}>
