@@ -8,7 +8,7 @@ export default function SignInPage() {
           <h1 className="text-3xl font-bold text-gray-900">LibraryOS</h1>
           <p className="mt-2 text-gray-600">Library Management System</p>
         </div>
-        <SignIn />
+        <SignIn appearance={{ elements: { cardBox: "w-[28rem]" } }} />
       </div>
     </main>
   );

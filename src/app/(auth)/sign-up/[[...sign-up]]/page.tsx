@@ -8,7 +8,7 @@ export default function SignUpPage() {
           <h1 className="text-3xl font-bold text-gray-900">LibraryOS</h1>
           <p className="mt-2 text-gray-600">Create your account</p>
         </div>
-        <SignUp />
+        <SignUp appearance={{ elements: { cardBox: "w-[28rem]" } }} />
       </div>
     </main>
   );
